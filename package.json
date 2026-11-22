@@ -1,0 +1,19 @@
+{
+  "name": "@formizeflow/mcp",
+  "version": "0.1.0",
+  "description": "FormFlow MCP server for Claude Code, Claude Desktop and Cursor: build, publish and analyze forms and A/B tests from your agent.",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/formizeflow/formflow-mcp.git" },
+  "homepage": "https://github.com/formizeflow/formflow-mcp#readme",
+  "type": "module",
+  "bin": { "formflow-mcp": "./dist/index.js" },
+  "files": ["dist", "README.md", "LICENSE"],
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --clean --external @modelcontextprotocol/sdk",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": { "@modelcontextprotocol/sdk": "^1.32.2" },
+  "devDependencies": { "@types/node": "^22.10.0", "tsup": "^8.3.0", "typescript": "^5.7.0" },
+  "publishConfig": { "access": "public", "provenance": true }
+}
